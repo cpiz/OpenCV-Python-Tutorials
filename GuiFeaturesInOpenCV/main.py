@@ -1,5 +1,5 @@
-import numpy as np
 import cv2
+from matplotlib import pyplot as plt
 
 if __name__ == "__main__":
     # read image
@@ -11,10 +11,15 @@ if __name__ == "__main__":
     cv2.imshow('imgColor', imgColor)  # show image in special window
 
     # wait for any key
-    cv2.waitKey(0)
+    key = cv2.waitKey(0)
 
-    # close
-    cv2.destroyAllWindows()
+    if key == ord('s'):  # wait for s to exit
+        # save the image in PNG format in the working directory
+        cv2.imwrite('liushishi_gray.png', imgGray)
+    cv2.destroyAllWindows()  # close
 
-    # save the image in PNG format in the working directory
-    cv2.imwrite('liushishi_gray.png', imgGray)
+    plt.imshow(imgGray, cmap='gray', interpolation='bicubic')
+    # plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
+    plt.show()
+
+
