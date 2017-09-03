@@ -22,7 +22,7 @@ def record():
         # Display the resulting frame
         cv2.imshow('frame', frame)
 
-        if cv2.waitKey(40) & 0xFF == ord('q'):  # 通过waitKey实现了帧率控制
+        if cv2.waitKey(40) & 0xFF == 27:  # 通过waitKey实现了帧率控制
             break
 
     # When everything done, release the capture
@@ -46,7 +46,7 @@ def replay():
         # Display the resulting frame
         cv2.imshow('frame', gray)
 
-        if cv2.waitKey(40) & 0xFF == ord('q'):  # 通过waitKey实现了帧率控制
+        if cv2.waitKey(40) & 0xFF == 27:  # 通过waitKey实现了帧率控制
             break
 
     # When everything done, release the capture
